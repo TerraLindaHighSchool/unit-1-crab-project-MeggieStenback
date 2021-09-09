@@ -1,13 +1,15 @@
 import greenfoot.*;
 
     /**
-    * The class controls the Crab object
+    * The class controls the Frog object
     * @author: Meggie Stenback
     * @version: 8/26/2021
     */
-public class Crab extends Actor
+public class Frog extends Actor
 {
-     private int numOfWorms = 8;
+    private int numOfFly = 8;
+     int numOfRightFly = 4;
+    
     // This method repeats the following actions
     public void act()
     {
@@ -50,24 +52,25 @@ public class Crab extends Actor
     // Checks for collisions with other objects
     private void onCollision ( )
     {   
-        if(isTouching(Worm.class))
+        if(isTouching(Fly.class))
         {
-            removeTouching(Worm.class);
+            removeTouching(Fly.class);
             Greenfoot.playSound("slurp.wav");
-            numOfWorms --;
+            numOfFly --;
             // Winning the game
-            if(numOfWorms ==0)
+            if(numOfFly ==0)
 
             {
              Greenfoot.setWorld(new WinSplash());
                 Greenfoot.playSound("fanfare.wav");
                 Greenfoot.stop();   
             }
-            if(getWorld( ).getObjects(Worm.class).size()==0)
+            if(getWorld( ).getObjects(Fly.class).size()==0)
             {
                 
             }
         }
+        
         if(isTouching(Lobster.class))
         {
             Greenfoot.playSound("au.wav");
