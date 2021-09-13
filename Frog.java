@@ -36,15 +36,30 @@ public class Frog extends Actor
     {
         if(Greenfoot.isKeyDown("right"))
         {
-            turn(4);
+            setRotation(0);
+            move(2);
         }
     
         if(Greenfoot.isKeyDown("left"))
         {
-            turn(-4);
+            setRotation(180);
+            move(2);
         }
         
-                if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up"))
+        {
+            setRotation(270);
+            move(2);
+        }
+        
+        
+         if(Greenfoot.isKeyDown("down"))
+        {
+            setRotation(90);
+            move(2);
+        }
+        
+        if(Greenfoot.isKeyDown("space"))
         {
             Greenfoot.delay(60);
         }
@@ -61,9 +76,9 @@ public class Frog extends Actor
             if(numOfFly ==0)
 
             {
-             Greenfoot.setWorld(new WinSplash());
-                Greenfoot.playSound("fanfare.wav");
-                Greenfoot.stop();   
+            Greenfoot.setWorld(new WinSplash());
+            Greenfoot.playSound("fanfare.wav");
+            Greenfoot.stop();   
             }
             if(getWorld( ).getObjects(Fly.class).size()==0)
             {
@@ -71,9 +86,10 @@ public class Frog extends Actor
             }
         }
         
-        if(isTouching(Lobster.class))
+        if(isTouching(Snake.class))
         {
-            Greenfoot.playSound("au.wav");
+            Greenfoot.setWorld(new LoseSplash());
+            Greenfoot.playSound("splat.mp3");
             Greenfoot.stop( );
         }
     }

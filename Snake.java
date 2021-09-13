@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Snake here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Meggie Stenback) 
+ * @version (9/9/2021)
  */
 public class Snake extends Actor
 {
@@ -14,6 +14,14 @@ public class Snake extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        move(3);
+        turnAtEdge();
+    }
+    private void turnAtEdge( )
+    {
+        if(isAtEdge())
+        {
+            turn(50);
+        }
     }
 }

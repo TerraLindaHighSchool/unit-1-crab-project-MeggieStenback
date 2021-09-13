@@ -2,6 +2,8 @@ import greenfoot.*;  // (Actor, World, Greenfoot, GreenfootImage)
 
 public class FrogBog extends World
 {
+    GreenfootSound background = new GreenfootSound("music.mp3");
+    GreenfootSound background1 = new GreenfootSound("ribbit.mp3");
     /**
      * Create the crab world (the beach). Our world has a size 
      * of 560x560 cells, where every cell is just 1 pixel.
@@ -9,6 +11,8 @@ public class FrogBog extends World
     public FrogBog() 
     {
         super(560, 560, 1);
+        background.playLoop();
+        background1.playLoop();
         prepare();
     }
     
@@ -20,8 +24,6 @@ public class FrogBog extends World
     {
         Frog crab = new Frog();
         addObject(crab,250,243);
-        Lobster lobster = new Lobster();
-        addObject(lobster,465,67);
         Fly fly = new Fly();
         addObject(fly,410,304);
         Fly fly2 = new Fly();
@@ -38,5 +40,7 @@ public class FrogBog extends World
         addObject(fly7,109,330);
         Fly fly8 = new Fly();
         addObject(fly8,483,477);
+        Snake snake = new Snake();
+        addObject(snake,353,218);
     }
 }
