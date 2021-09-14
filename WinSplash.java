@@ -3,12 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class WinSplash here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Meggie Stenback) 
+ * @version (9/14/2021)
  */
 public class WinSplash extends World
 {
-
     /**
      * Constructor for objects of class WinSplash.
      * 

@@ -3,27 +3,24 @@ import greenfoot.*;
     /**
     * The class controls the Frog object
     * @author: Meggie Stenback
-    * @version: 8/26/2021
+    * @version: 9/14/2021
     */
 public class Frog extends Actor
 {
     private int numOfFly = 8;
-     int numOfRightFly = 4;
     
     // This method repeats the following actions
     public void act()
     {
-          
          move(3);
          turnAtEdge();
          checkKeyPress();
          onCollision();
-     
     }
 
-    // Moves the Crab
+    // Moves the Frog
 
-    // Turns the Crab at the edge
+    // Turns the Frog at the edge
     private void turnAtEdge( )
     {
         if(isAtEdge())
@@ -52,7 +49,6 @@ public class Frog extends Actor
             move(2);
         }
         
-        
          if(Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
@@ -72,7 +68,7 @@ public class Frog extends Actor
             removeTouching(Fly.class);
             Greenfoot.playSound("slurp.wav");
             numOfFly --;
-            // Winning the game
+            //Winning the game
             if(numOfFly ==0)
 
             {
@@ -88,6 +84,7 @@ public class Frog extends Actor
         
         if(isTouching(Snake.class))
         {
+            //Losing the game
             Greenfoot.setWorld(new LoseSplash());
             Greenfoot.playSound("splat.mp3");
             Greenfoot.stop( );
